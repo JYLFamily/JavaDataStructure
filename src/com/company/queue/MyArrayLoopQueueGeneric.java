@@ -3,9 +3,9 @@ package com.company.queue;
 public class MyArrayLoopQueueGeneric<E> implements MyQueueGeneric<E> {
 
     private E[] array;
-    private int front = 0;
-    private int tail = 0;
-    private int size = 0;
+    private int front;
+    private int tail;
+    private int size;
 
     public MyArrayLoopQueueGeneric(int capacity) {
         // 因为实现循环队列的数组会故意空一个元素, 所以循环队列的容量为数组容量 - 1
@@ -85,16 +85,6 @@ public class MyArrayLoopQueueGeneric<E> implements MyQueueGeneric<E> {
         }
 
         res.append("] TAIL");
-
-//        StringBuilder res = new StringBuilder();
-//        res.append(String.format("Queue: size = %d , capacity = %d\n", size, getCapacity()));
-//        res.append("front [");
-//        for(int i = front ; i != tail ; i = (i + 1) % this.array.length){
-//            res.append(this.array[i]);
-//            if((i + 1) % this.array.length != tail)
-//                res.append(", ");
-//        }
-//        res.append("] tail");
 
         return res.toString();
     }
